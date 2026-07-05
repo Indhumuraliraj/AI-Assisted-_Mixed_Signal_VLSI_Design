@@ -1,0 +1,4 @@
+[WARNING GRT-0026] Missing route to pin _383_/Y.
+Warning: There are 46 unclocked register/latch pins.
+Warning: There are 47 unconstrained endpoints.
+[WARNING] Did not save OpenROAD database!

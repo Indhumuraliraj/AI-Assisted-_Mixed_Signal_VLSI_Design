@@ -1,0 +1,6 @@
+[WARNING STA-0053] /openlane/designs/design_mux/lib/AMUX2_3V.lib line 1, library AMUX2_3V already exists.
+[WARNING STA-0053] /openlane/designs/design_mux/lib/AMUX2_3V.lib line 1, library AMUX2_3V already exists.
+[WARNING CTS-0043] 4896 wires are pure wire and no slew degradation.
+[WARNING CTS-0041] Net "select" has 1 sinks. Skipping...
+[WARNING CTS-0083] No clock nets have been found.
+[WARNING CTS-0082] No valid clock nets in the design.

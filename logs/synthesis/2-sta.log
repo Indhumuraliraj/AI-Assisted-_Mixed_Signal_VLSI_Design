@@ -1,0 +1,555 @@
+OpenSTA 2.4.0 41a51eaf4c Copyright (c) 2021, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+define_corners Typical
+read_liberty -corner Typical /home/indhu/Desktop/mixed_signal_VLSI/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+Reading netlist '/openlane/designs/design_mux/runs/RUN_2026.07.05_03.37.10/results/synthesis/design_mux.v'…
+Found '/// sta-blackbox' in '/openlane/designs/design_mux/src/AMUX2_3V.v', skipping…
+Warning: /openlane/designs/design_mux/runs/RUN_2026.07.05_03.37.10/results/synthesis/design_mux.v line 1858, module AMUX2_3V not found. Creating black box for AMUX2_3V.
+Reading design constraints file at '/openlane/scripts/base.sdc'…
+[INFO]: Setting output delay to: 2.0
+[INFO]: Setting input delay to: 2.0
+[INFO]: Setting load to: 0.033442
+[INFO]: Setting clock uncertainty to: 0.25
+[INFO]: Setting clock transition to: 0.15
+[INFO]: Setting timing derate to: 5.0 %
+min_report
+
+===========================================================================
+report_checks -path_delay min (Hold)
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+min_report_end
+max_report
+
+===========================================================================
+report_checks -path_delay max (Setup)
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+max_report_end
+checks_report
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: select (clock source 'select')
+Endpoint: AMUX2_3V/select (internal pin)
+Path Group: unconstrained
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    5.00 v select (in)
+     1    0.00                           select (net)
+                  0.00    0.00    5.00 v AMUX2_3V/select (AMUX2_3V)
+                                  5.00   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+SCK                                      10     46    -36 (VIOLATED)
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 302 unannotated drivers.
+ CSB
+ RST
+ SCK
+ SDI
+ mask_rev_in[0]
+ mask_rev_in[1]
+ mask_rev_in[2]
+ mask_rev_in[3]
+ select
+ trap
+ _246_/X
+ _247_/X
+ _248_/X
+ _249_/Y
+ _250_/X
+ _251_/X
+ _252_/X
+ _253_/X
+ _254_/Y
+ _255_/X
+ _256_/X
+ _257_/Y
+ _258_/X
+ _259_/X
+ _260_/Y
+ _261_/X
+ _262_/Y
+ _263_/X
+ _264_/X
+ _265_/Y
+ _266_/X
+ _267_/X
+ _268_/X
+ _269_/X
+ _270_/X
+ _271_/X
+ _272_/X
+ _273_/X
+ _274_/X
+ _275_/X
+ _276_/X
+ _277_/X
+ _278_/X
+ _279_/X
+ _280_/X
+ _281_/X
+ _282_/X
+ _283_/X
+ _284_/X
+ _285_/X
+ _286_/Y
+ _287_/Y
+ _288_/X
+ _289_/X
+ _290_/X
+ _291_/Y
+ _292_/Y
+ _293_/X
+ _294_/X
+ _295_/X
+ _296_/X
+ _297_/X
+ _298_/X
+ _299_/X
+ _300_/Y
+ _301_/X
+ _302_/X
+ _303_/X
+ _304_/X
+ _305_/Y
+ _306_/Y
+ _307_/X
+ _308_/X
+ _309_/Y
+ _310_/X
+ _311_/Y
+ _312_/X
+ _313_/X
+ _314_/Y
+ _315_/Y
+ _316_/Y
+ _317_/Y
+ _318_/Y
+ _319_/X
+ _320_/X
+ _321_/X
+ _322_/Y
+ _323_/X
+ _324_/X
+ _325_/X
+ _326_/X
+ _327_/Y
+ _328_/X
+ _329_/X
+ _330_/X
+ _331_/X
+ _332_/Y
+ _333_/X
+ _334_/X
+ _335_/X
+ _336_/Y
+ _337_/Y
+ _338_/X
+ _339_/X
+ _340_/X
+ _341_/X
+ _342_/X
+ _343_/X
+ _344_/Y
+ _345_/X
+ _346_/X
+ _347_/X
+ _348_/Y
+ _349_/X
+ _350_/X
+ _351_/X
+ _352_/Y
+ _353_/Y
+ _354_/X
+ _355_/X
+ _356_/Y
+ _357_/Y
+ _358_/X
+ _359_/Y
+ _360_/Y
+ _361_/Y
+ _362_/X
+ _363_/Y
+ _364_/X
+ _365_/X
+ _366_/X
+ _367_/X
+ _368_/X
+ _369_/X
+ _370_/X
+ _371_/X
+ _372_/X
+ _373_/X
+ _374_/X
+ _375_/X
+ _376_/X
+ _377_/X
+ _378_/X
+ _379_/X
+ _380_/X
+ _381_/X
+ _382_/X
+ _383_/Y
+ _384_/X
+ _385_/Y
+ _386_/Y
+ _387_/Y
+ _388_/X
+ _389_/X
+ _390_/X
+ _391_/X
+ _392_/X
+ _393_/X
+ _394_/X
+ _395_/Y
+ _396_/X
+ _397_/X
+ _398_/X
+ _399_/X
+ _400_/X
+ _401_/X
+ _402_/Y
+ _403_/X
+ _404_/X
+ _405_/X
+ _406_/X
+ _407_/Y
+ _408_/X
+ _409_/X
+ _410_/X
+ _411_/X
+ _412_/X
+ _413_/Y
+ _414_/X
+ _415_/X
+ _416_/X
+ _417_/Y
+ _418_/X
+ _419_/X
+ _420_/X
+ _421_/X
+ _422_/Y
+ _423_/X
+ _424_/X
+ _425_/X
+ _426_/X
+ _427_/Y
+ _428_/X
+ _429_/X
+ _430_/Y
+ _431_/Y
+ _432_/X
+ _433_/X
+ _434_/X
+ _435_/Y
+ _436_/X
+ _437_/X
+ _438_/X
+ _439_/X
+ _440_/X
+ _441_/X
+ _442_/Y
+ _443_/Y
+ _444_/X
+ _445_/Y
+ _446_/Y
+ _447_/Y
+ _448_/Y
+ _449_/Y
+ _450_/Y
+ _451_/Y
+ _452_/Y
+ _453_/Y
+ _454_/Y
+ _455_/Y
+ _456_/Y
+ _457_/Y
+ _458_/Y
+ _459_/Y
+ _460_/Y
+ _461_/Y
+ _462_/Y
+ _463_/Y
+ _464_/X
+ _465_/Y
+ _466_/Y
+ _467_/Y
+ _468_/X
+ _469_/Y
+ _470_/Y
+ _471_/Y
+ _472_/Y
+ _473_/Y
+ _474_/Y
+ _475_/Y
+ _476_/Y
+ _477_/Y
+ _478_/Y
+ _479_/Y
+ _480_/Y
+ _481_/Y
+ _482_/Y
+ _483_/Y
+ _484_/Y
+ _485_/Y
+ _486_/Y
+ _487_/Y
+ _488_/Y
+ _489_/Y
+ _490_/Y
+ _491_/Y
+ _492_/Q
+ _493_/Q
+ _494_/Q
+ _495_/Q
+ _496_/Q
+ _497_/Q
+ _498_/Q
+ _499_/Q
+ _500_/Q
+ _501_/Q
+ _502_/Q
+ _503_/Q
+ _504_/Q
+ _505_/Q
+ _506_/Q
+ _507_/Q
+ _508_/Q
+ _509_/Q
+ _510_/Q
+ _511_/Q
+ _512_/Q
+ _513_/Q
+ _514_/Q
+ _515_/Q
+ _516_/Q
+ _517_/Q
+ _518_/Q
+ _519_/Q
+ _520_/Q
+ _521_/Q
+ _522_/Q
+ _523_/Q
+ _524_/Q
+ _525_/Q
+ _526_/Q
+ _527_/Q
+ _528_/Q
+ _529_/Q
+ _530_/Q
+ _531_/Q
+ _532_/Q
+ _533_/Q
+ _534_/Q
+ _535_/Q
+ _536_/Q
+ _537_/Q
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 1
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 46 unclocked register/latch pins.
+  _492_/CLK
+  _493_/CLK
+  _494_/CLK
+  _495_/CLK
+  _496_/CLK
+  _497_/CLK
+  _498_/CLK
+  _499_/CLK
+  _500_/CLK
+  _501_/CLK
+  _502_/CLK
+  _503_/CLK
+  _504_/CLK
+  _505_/CLK
+  _506_/CLK
+  _507_/CLK
+  _508_/CLK
+  _509_/CLK
+  _510_/CLK
+  _511_/CLK
+  _512_/CLK
+  _513_/CLK
+  _514_/CLK
+  _515_/CLK
+  _516_/CLK
+  _517_/CLK
+  _518_/CLK
+  _519_/CLK
+  _520_/CLK
+  _521_/CLK
+  _522_/CLK
+  _523_/CLK
+  _524_/CLK
+  _525_/CLK
+  _526_/CLK
+  _527_/CLK
+  _528_/CLK
+  _529_/CLK
+  _530_/CLK
+  _531_/CLK
+  _532_/CLK
+  _533_/CLK
+  _534_/CLK
+  _535_/CLK
+  _536_/CLK
+  _537_/CLK
+Warning: There are 47 unconstrained endpoints.
+  out
+  _492_/D
+  _493_/D
+  _494_/D
+  _495_/D
+  _496_/D
+  _497_/D
+  _498_/D
+  _499_/D
+  _500_/D
+  _501_/D
+  _502_/D
+  _503_/D
+  _504_/D
+  _505_/D
+  _506_/D
+  _507_/D
+  _508_/D
+  _509_/D
+  _510_/D
+  _511_/D
+  _512_/D
+  _513_/D
+  _514_/D
+  _515_/D
+  _516_/D
+  _517_/D
+  _518_/D
+  _519_/D
+  _520_/D
+  _521_/D
+  _522_/D
+  _523_/D
+  _524_/D
+  _525_/D
+  _526_/D
+  _527_/D
+  _528_/D
+  _529_/D
+  _530_/D
+  _531_/D
+  _532_/D
+  _533_/D
+  _534_/D
+  _535_/D
+  _536_/D
+  _537_/D
+checks_report_end
+power_report
+
+===========================================================================
+ report_power
+============================================================================
+======================= Typical Corner ===================================
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             6.31e-05   5.06e-05   4.90e-10   1.14e-04  54.4%
+Combinational          6.83e-05   2.72e-05   8.04e-10   9.55e-05  45.6%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  1.31e-04   7.78e-05   1.29e-09   2.09e-04 100.0%
+                          62.8%      37.2%       0.0%
+
+power_report_end
+skew_report
+
+===========================================================================
+report_clock_skew
+============================================================================
+Clock select
+No launch/capture paths found.
+
+skew_report_end
+summary_report
+
+===========================================================================
+report_tns
+============================================================================
+tns 0.00
+
+===========================================================================
+report_wns
+============================================================================
+wns 0.00
+
+===========================================================================
+report_worst_slack -max (Setup)
+============================================================================
+worst slack INF
+
+===========================================================================
+report_worst_slack -min (Hold)
+============================================================================
+worst slack INF
+summary_report_end
+[WARNING] Did not save OpenROAD database!
+Writing SDF to '/openlane/designs/design_mux/runs/RUN_2026.07.05_03.37.10/results/synthesis/design_mux.sdf'…

@@ -1,0 +1,4 @@
+Warning: /openlane/designs/design_mux/runs/RUN_2026.07.05_03.37.10/results/synthesis/design_mux.v line 1858, module AMUX2_3V not found. Creating black box for AMUX2_3V.
+Warning: There are 46 unclocked register/latch pins.
+Warning: There are 47 unconstrained endpoints.
+[WARNING] Did not save OpenROAD database!

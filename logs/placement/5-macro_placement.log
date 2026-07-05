@@ -1,0 +1,8 @@
+OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Placing the following macros:
+{'AMUX2_3V': ['10000', '10000', 'N']}
+Design name: design_mux
+Placing AMUX2_3V
+Successfully placed 1 instances.
