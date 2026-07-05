@@ -13,7 +13,7 @@ Reference repo: [praharshapm/vsdmixedsignalflow](https://github.com/praharshapm/
 
 Mixed-signal design refers to integrating analog circuit blocks (which handle continuous, real-world signals) and digital logic (which handles discrete 0/1 signals) on the same chip. It is used because most real-world systems — sensors, communication chips, power management ICs, audio/RF front-ends — need to interface analog signals with digital processors, and combining both on one die reduces cost, power, and board area compared to using separate analog and digital chips. This project implements a small mixed-signal system: a 2:1 analog multiplexer (`AMUX2_3V`) controlled by a digital SPI register block, carried through the complete RTL-to-GDS physical design flow.
 
-![image]()
+![image](https://github.com/Indhumuraliraj/AI-Assisted_Mixed_Signal_VLSI_Design/blob/main/screenshots/Mixed_Signal_VLSI_Design.jpeg)
 ---
 
 ## 2. Physical Design — `design_mux` (Mixed-Signal 2:1 MUX)
@@ -90,7 +90,8 @@ run_synthesis
 
 **Result:** Passed — synthesized to 4 top-level cells (1 `AMUX2_3V` blackbox instance, 1 DFF, 2 inverters). STA passed: setup slack **7.97 ns**, hold slack **0.14 ns**.
 
-**Output image:** `[]`
+**Output report:** 
+[synthesis.log](https://github.com/Indhumuraliraj/AI-Assisted_Mixed_Signal_VLSI_Design/blob/main/logs/synthesis/1-synthesis.log)
 
 ---
 
@@ -114,7 +115,8 @@ lef read /home/indhu/Desktop/mixed_signal_VLSI/OpenLane/designs/design_mux/runs/
 def read design_mux.def
 ```
 
-**Output image:** `[Insert floorplan layout screenshot from Magic/KLayout here]`
+**Output image:**
+**Floorplan** <br> ![image](https://github.com/Indhumuraliraj/AI-Assisted_Mixed_Signal_VLSI_Design/blob/main/screenshots/floorplan.png)
 
 ---
 
@@ -138,7 +140,8 @@ lef read /home/indhu/Desktop/mixed_signal_VLSI/OpenLane/designs/design_mux/runs/
 def read design_mux.def
 ```
 
-**Output image:** `[Insert placement layout screenshot here]`
+**Output image:** 
+**placement** <br>![image](https://github.com/Indhumuraliraj/AI-Assisted_Mixed_Signal_VLSI_Design/blob/main/screenshots/placement.png)
 
 ---
 
@@ -177,7 +180,8 @@ lef read /home/indhu/Desktop/mixed_signal_VLSI/OpenLane/designs/design_mux/runs/
 def read design_mux.def
 ```
 
-**Output image:** `[Insert routed layout screenshot here]`
+**Output image:** 
+**Routing** <br>![image](https://github.com/Indhumuraliraj/AI-Assisted_Mixed_Signal_VLSI_Design/blob/main/screenshots/routing.png)
 
 ---
 
@@ -203,8 +207,9 @@ klayout -l $PDK_ROOT/sky130A/libs.tech/klayout/tech/sky130A.lyp design_mux.gds
 ```
 *(KLayout used as the reliable viewer here since Magic's GUI (`gui_show`) was unavailable/headless in this OpenLane build. Press `Shift+F` to zoom-fit.)*
 
-**Output image:** `[Insert final GDS screenshot here]`
-
+**Output image:** <br> 
+| **Layout** <br> ![image](https://github.com/Indhumuraliraj/AI-Assisted_Mixed_Signal_VLSI_Design/blob/main/screenshots/layout.png) | **Zoomed_layout** <br> ![image](https://github.com/Indhumuraliraj/AI-Assisted_Mixed_Signal_VLSI_Design/blob/main/screenshots/layout1.png) |
+|:---:|:---:|
 ---
 
 ## 3. Errors and Debug
