@@ -9,6 +9,51 @@ Reference repo: [praharshapm/vsdmixedsignalflow](https://github.com/praharshapm/
 
 ---
 
+
+## Folder Structure
+
+```
+design_mux/
+├── config.json
+├── config.tcl
+├── cfg/
+│   └── macro.cfg              # MACRO_PLACEMENT_CFG — macro placement coordinates
+├── src/
+│   ├── design_mux.v
+│   ├── raven_spi.v
+│   ├── spi_slave.v
+│   └── AMUX2_3V.v
+├── lef/
+│   └── AMUX2_3V.lef           # EXTRA_LEFS
+├── lib/
+│   └── AMUX2_3V.lib           # EXTRA_LIBS
+├── gds/
+│   └── AMUX2_3V.gds           # EXTRA_GDS_FILES
+├── logs/
+│   └── synthesis/
+│       └── 1-synthesis.log
+├── results/
+│   └── signoff/
+│       ├── design_mux.gds
+│       ├── design_mux.magic.gds
+│       ├── design_mux.mag
+│       ├── design_mux.lef.mag
+│       ├── design_mux.lef
+│       ├── design_mux.lib
+│       └── design_mux.sdf
+```
+
+---
+
+## AI Tool Used
+
+| Detail | Value |
+|---|---|
+| **Tool** | Claude (Claude.ai, chat interface) |
+| **Model** | Claude Sonnet |
+| **Role in workflow** | Generated candidate RTL/config files from the reference repo description, explained Magic→LEF/GDS export steps, and helped triage/diagnose each terminal error (PDN pitch sizing, DEF cell-name typo, missing LIB threshold attributes, LVS `EXT_NETLIST` requirement) before manual fixes were applied and verified against tool output |
+
+
 ## 1. Introduction to Mixed-Signal Design
 
 Mixed-signal design refers to integrating analog circuit blocks (which handle continuous, real-world signals) and digital logic (which handles discrete 0/1 signals) on the same chip. It is used because most real-world systems — sensors, communication chips, power management ICs, audio/RF front-ends — need to interface analog signals with digital processors, and combining both on one die reduces cost, power, and board area compared to using separate analog and digital chips. This project implements a small mixed-signal system: a 2:1 analog multiplexer (`AMUX2_3V`) controlled by a digital SPI register block, carried through the complete RTL-to-GDS physical design flow.
